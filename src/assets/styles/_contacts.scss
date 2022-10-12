@@ -1,0 +1,112 @@
+.contacts{
+    &__form{
+        margin-bottom: 162px;
+    }
+    &__title{
+        margin-top: 61px;
+        font-size: 80px;
+        line-height: 120px;
+        color: #388AF3;
+        font-weight: 700;
+    }
+    &__descr{
+        font-size: 20px;
+        line-height: 30px;
+        color: #343434;
+        max-width: 542px;
+        margin-bottom: 97px;
+        a{
+            font-weight: 700;
+            color: #388AF3;
+        }
+    }
+    &__items{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 30px;
+    }
+    &__inputs{
+        max-width: 741px;
+        width: 100%;
+        .app__label:first-child{
+            max-width: 60%;
+            flex-shrink: 0;
+        }
+    }
+    &__sep{
+        display: flex;
+        grid-gap: 30px;
+    }
+    input[type=checkbox]{
+        display: none;
+    }
+    &__check{
+        display: flex;
+        font-size: 18px;
+        line-height: 27px;
+        color: #6D6D6D;
+        user-select: none;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding-left: 50px;
+        &::before{
+           position: absolute;
+           left: 0;
+            content: '';
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid #D3D3D3;
+        }
+        span{
+            color: #388AF3;
+            margin-left: 5px;
+        }
+    }
+    input[type=checkbox]:checked ~ .contacts__check::before{
+        background: radial-gradient(circle, #388AF3 30%, rgba(255,255,255,1) 37%);
+    }
+    
+}
+@media(max-width: 922px) {
+    .contacts{
+        &__form{
+            margin-bottom: 100px;
+        }
+        &__title{
+            font-size: 60px;
+            line-height: 200%;
+        }
+        &__descr{
+            font-size: 16px;
+            margin-bottom: 79px;
+        }
+        &__items{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &__inputs{
+            max-width: none;
+            margin-bottom: 32px;
+        }
+    }
+}
+@media(max-width: 568px){
+    .contacts{
+        &__title{
+            margin-top: 57px;
+            font-size: 40px;
+            line-height: 1;
+            margin-bottom: 22px;
+        }
+        &__sep{
+            display: block;
+        }
+        &__check{
+            flex-wrap: wrap;
+        }
+    }
+}

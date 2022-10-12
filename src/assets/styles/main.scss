@@ -1,0 +1,79 @@
+@import './fonts';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-style: normal;
+    font-family: 'Gilroy';
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    border: none;
+    font-weight: 400;
+    &:focus{
+        outline: none;
+        border: none;
+    }
+}
+#app{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.main{
+    position: relative;
+    flex-grow: 1;
+    z-index: 5;
+    padding-top: 112px;
+}
+body{
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+}
+.container{
+    max-width: 1231px;
+    width: 100%;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+img{
+    display: block;
+}
+a{
+    position: relative;
+}
+a:not(.logo).router-link-exact-active{
+    color: #388AF3;
+}
+.page{
+    display: flex;
+    &__link{
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 21px;
+        color: #303030;
+        &.router-link-exact-active{
+            font-weight: 600;
+            color: inherit !important;
+            margin-left: 5px;
+        }
+    }
+}
+
+@import './header';
+@import './contacts';
+@import './footer';
+@media(max-width: 922px){
+    .page__link{
+        font-size: 16px;
+        line-height: 18px;
+    }
+}
+@media(max-width: 568px){
+    .page__link{
+        font-size: 12px;
+        line-height: 14px;
+    }
+}

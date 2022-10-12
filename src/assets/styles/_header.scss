@@ -1,0 +1,186 @@
+.header{
+    padding: 45px 50px 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+    &__nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__content{
+        display: flex;
+        flex-grow: 0.5;
+        justify-content: space-between;
+    }
+    &__list{
+        display: flex;
+    }
+    &__link{
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 21px;
+        color: #343434;
+        margin-left: 50px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        &:hover{
+            color: #388AF3;
+        }
+    }
+    &__langs, &__items{
+        display: flex;
+        align-items: center;
+    }
+    &__lang{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: uppercase;
+        color: #979BAD;
+        margin-left: 15px;
+        cursor: pointer;
+        span{
+            font-weight: inherit;
+            &::after{
+                content: '';
+                position: absolute;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                bottom: -50%;
+                background: transparent;
+            }
+        }
+        & input[type=radio]{
+            display: none;
+            &:checked ~ span{
+                color: #388AF3;
+                position: relative;
+                display: inline-flex;
+                justify-content: center;
+                &::after{
+                    background: #388AF3;
+                }
+            }
+        }
+
+    }
+    &__start{
+        display: flex;
+        align-items: center;
+        margin-left: 60px;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: #388AF3;
+        position: relative;
+        &::after{
+            content: '';
+            display: block;
+            width: 61px;
+            height: 61px;
+            border-radius: 50%;
+            border: 1px solid #E2E2E2;
+            position: absolute;
+            right: 0;
+            z-index: -1;
+        }
+        img{
+            margin-left: 10px;
+            margin-right: 15px;
+        }
+    }
+    &__btn{
+        align-items: center;
+        justify-content: center;
+        width: 41px;
+        height: 41px;
+        display: none;
+    }
+    &__abs{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: 0.2s linear;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: -100;
+        opacity: 0;
+        &.active{
+            opacity: 1;
+            z-index: 20;
+        }
+    }
+}
+.header .header__link::after{
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    bottom: -50%;
+    background: transparent;
+}
+.header a.router-link-exact-active::after, .header .header__link:hover::after{
+    background: #388AF3;
+}
+@media(max-width: 922px) {
+    .header{
+        padding: 35px 42px 15px;
+        &__list{
+            display: none;
+        }
+        &__content{
+            justify-content: flex-end;
+        }
+    }
+}
+@media(max-width: 568px) {
+    .header{
+        padding: 20px 40px;
+        &__btn{
+            display: flex;
+        }
+        &__content{
+            position: fixed;
+            top: 81px;
+            right: -200px;
+            width: 200px;
+            height: 100%;
+            flex-direction: column;
+            flex-grow: initial;
+            justify-content: initial;
+            padding-top: 50px;
+            transition: 0.2s linear;
+            background: #fff;
+            &.active{
+                right: 0;
+                box-shadow: -5px 5px 5px #388AF3;
+            }
+        }
+        &__items, &__list{
+            display: flex;
+            flex-direction: column;
+        }
+        &__link, &__lang{
+            margin: 15px 0;
+            &::after{
+                display: none;
+            }
+        }
+        &__lang {
+            margin: 15px;
+            span::after{
+                display: none;
+            }
+        }
+        &__start{
+            margin-left: 0;
+        }
+    }
+}

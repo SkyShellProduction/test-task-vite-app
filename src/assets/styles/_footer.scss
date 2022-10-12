@@ -1,0 +1,110 @@
+.footer{
+    padding: 42px 0 20px;
+    background: linear-gradient(93.29deg, #388AF3 21.04%, #A483E2 88.77%);
+    &__logo{
+        color: #fff;
+    }
+    &__content, &__items, &__copyright{
+        display: flex;
+        justify-content: space-between;
+    }
+ 
+    &__content{
+        margin-bottom: 49px;
+    }
+    &__items{
+        flex-grow: 0.5;
+    }
+    &__social{
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-right: 40px;
+        &-link{
+            display: block;
+            margin-bottom: 22px;
+        }
+    }
+    &__name{
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 31px;
+        color: #FFF;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        &::after{
+            content: '';
+            display: block;
+            margin-left: 10px;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #fff;
+        }
+    }
+    &__link{
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        color: #FFF;
+        display: block;
+        margin-bottom: 20px;
+    }
+    a:not(.logo).router-link-exact-active{
+        color: #000;
+    }
+    &__link[href^="tel:"]{
+        font-size: 20px;
+        line-height: 24px;
+    }
+    &__list-se{
+        position: absolute;
+        right: -50px;
+        margin-top: 30px;
+    }
+    &__text{
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        color: #FFFFFF;
+    }
+    &__copyright-link{
+        margin-bottom: 0;
+    }
+}
+@media(max-width: 922px) {
+    .footer{
+        &__content{
+            flex-direction: column;
+            margin-bottom: 126px;
+        }
+        &__logo{
+            margin-bottom: 50px;
+        }
+    }
+}
+@media(max-width: 690px) {
+    .footer{
+        padding-top: 51px;
+        &__logo{
+            margin-bottom: 44px;
+        }
+        &__content{
+            margin-bottom: 0;
+        }
+        &__items, &__copyright{
+            flex-direction: column;
+        }
+        &__list, &__social{
+            margin-bottom: 50px;
+            width: max-content;
+        }
+        &__social{
+            margin-bottom: 7px;
+        }
+        &__text{
+            margin-bottom: 10px;
+        }
+    }
+}
